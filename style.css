@@ -1,0 +1,247 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body{
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+p{
+  white-space: pre-wrap;
+}
+header{
+  height: 100vh;
+  width: 100%;
+  background-image: url('img/bg.png');
+  background-size: 100% 100%;
+}
+.title{
+  font-size: 6em;
+  margin: 1.5% 0;
+}
+.sub{
+  font-size: 3em;
+  margin-bottom: 3.5%;
+}
+.authors{
+  font-size:1.5em;
+}
+.arrow{
+  position: absolute;
+  bottom: 5%;
+  cursor: pointer;
+  color: #212529;
+  animation: move 0.5s infinite;
+}
+.arrow:hover{
+  animation-play-state: paused;
+}
+#bg{
+  position: fixed;
+  left:0;
+  top:0;
+  width:100vw;
+  height: 100%;
+  z-index:1000;
+  background-color: rgba(0,0,0,0.6);
+  opacity: 0;
+  display: none;
+}
+#bg .container{
+  position: relative;
+}
+#bg #bgClose{
+  position: absolute;
+  top: -5%;
+  right: -2.5%;
+  width:30px;
+  height: 30px;
+  cursor: pointer;
+}
+.initHidden{
+  opacity:0;
+  transition: opacity 1s linear;
+}
+.initHiddenOff{
+  opacity: 1;
+}
+#conceito .carousel{
+  width: 100%;
+}
+#caracteristicas{
+  background-color: #80807c;
+  color: #fff;
+}
+#caracteristicas ul > li{
+  margin-bottom: 2%;
+  cursor: pointer;
+  position: relative;
+}
+#caracteristicas ul > li::after{
+  content: " ";
+  width: 0px;
+  height: 4px;
+  background-image: linear-gradient(45deg, #f5f0f0, #dbd6d6);
+  position: absolute;
+  bottom: -0.5%;
+  left: 0;
+  transition: width 0.9s;
+}
+#caracteristicas ul > li:hover::after{
+  width: 90px;
+}
+#contexto .col-lg-5{
+  border: 1px solid #212529;
+  height: 3.5em;
+  overflow-y: hidden;
+}
+#contexto .bi-triangle-fill{
+  color: #212529;
+  cursor: pointer;
+}
+#contexto .bi-triangle-fill:hover{
+  transform: rotate(180deg);
+}
+#autores .card{
+  height: 400px;
+  position: relative
+}
+#autores .card img{
+  height: 85%;
+}
+#autores .card .content-element{
+  position: absolute;
+  height: 400px;
+  top: 100vh;
+  transition: all 0.5s;
+}
+#botao a{
+  width: 20%;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+.button{
+  width:40%;
+  height: 2.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  border-radius: 10px;
+  font-size: 18pt;
+  cursor: pointer;
+  padding-top: 5%;
+}
+a > .button{
+  width: 100%;
+  margin: 0;
+  transition: all 0.5s;
+}
+.button:hover, .button:focus, .full_button:hover, .full_button:focus{
+  transform: translateY(-0.2em);
+}
+.cinza{
+  color: #fff;
+  background-color:#7c7a73;
+  transition: all 0.5s;
+}
+.cinza:hover, .cinza:focus{
+  color: #7c7a73;
+  background-color:  #fff;
+  box-shadow: 
+      0.02em 0.02em 24px #c6bc90,
+      0.02em 0.02em 24px #c6bc90,
+      0.02em 0.02em 24px #c6bc90,
+      0.02em 0.02em 24px #c6bc90;
+}
+#rodape{
+  background-color: #80807c;
+}
+/* #autores .card .hidden-element:hover{
+  top:0;
+  left:0;
+  z-index: 1000;
+} */
+
+
+@keyframes move{
+  0%{
+      transform: translateY(0);
+  }
+  20%{
+      transform: translateY(.1em);
+  }
+  40%{
+      transform: translateY(.2em);
+  }
+  50%{
+      transform: translateY(.3em);
+  }
+  60%{
+      transform: translateY(.2em);
+  }
+  80%{
+      transform: translateY(.1em);
+  }
+  100%{
+      transform: translateY(0);
+  }
+}
+@media screen and (max-width: 768px){
+  body{
+    font-size: 12px
+  }
+  header{
+    height: 50vh;
+  }
+  .title{
+    font-size: 4em;
+    margin: 1.5% 0;
+  }
+  .sub{
+    font-size: 2em;
+    margin-bottom: 3.5%;
+  }
+  .authors{
+    font-size:1em;
+  }
+  .arrow{
+    display: none
+  }
+  ul.ms-5{
+    position: relative;
+    left: -7em;
+  }
+  #contexto > div.ms-5{
+    position: relative;
+    left: -4em;
+  }
+  .card{
+    position: relative;
+    left: 48.5%;
+    transform: translateX(-50%);
+  }
+  .content-element, footer{
+    font-size: 1.5em;
+  }
+  #botao h1{
+    width: 95%;
+  }
+  #botao a{
+    width: 50%;
+  }
+}
+@media screen and (max-width: 768px){
+  .title{
+    font-size: 3em;
+    margin: 1.5% 0;
+  }
+  .sub{
+    font-size: 1.5em;
+    margin-bottom: 3.5%;
+  }
+}
